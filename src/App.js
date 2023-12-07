@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import LoginPage from './components/User/LoginPage';
+import Register from './components/User/RegisterPage';
 import Orders from './components/Order';
 import Books from './components/Book';
 import Review from './components/Review';
@@ -15,6 +16,7 @@ function App() {
         <Route path="/order" element={<Orders />} />
         <Route path="/book" element={<Books />} />
         <Route path="/review" element={<Review />} />
+        <Route path="/login/register" element={<Register />} />
 
         {/* Agrega más rutas según sea necesario */}
       </Routes>
