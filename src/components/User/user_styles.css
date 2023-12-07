@@ -35,6 +35,20 @@
 .column p {
   margin-bottom: 30px;
 }
+.column Button {
+  background-color: rgb(70, 75, 85);
+  border-radius: 5pt;
+  max-width: 100px;
+  padding: 2%;
+  margin: auto;
+}
+
+.column Button:hover {
+  background-color: rgb(92, 100, 117);
+  border-radius: 20pt;
+  max-width: 800px;
+  padding: 2%;
+}
 .backHome {
     text-align: center;
 }
