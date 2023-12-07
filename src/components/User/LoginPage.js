@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import authService from '../../services/authService';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap';
-import './styles.css'; // Importa tus estilos CSS aquí
+import './user_styles.css'; // Importa tus estilos CSS aquí
 
 
 function LoginPage() {
@@ -31,10 +31,7 @@ function LoginPage() {
         </Col>
         <Col md={4} className="column">
           <h1>Registrate</h1>
-          <Form>
-            <Form.Label>Password</Form.Label>
-
-          </Form>
+          <Link to="/login/register">Registrate</Link>
         </Col>
       </Row>
       <Link to="/" className='backHome'>Volver a Home</Link>
