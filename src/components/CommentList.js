@@ -15,8 +15,8 @@ function CommentList(props) {
         </tr>
       </thead>
       <tbody>
-        {props.comments.map((comment) =>
-          <Comment key={comment.id} comment={comment}/>
+        {props.comments.map((c) =>
+          <Comment key={c.id} comment={c}/>
         )}
       </tbody>
     </table>
