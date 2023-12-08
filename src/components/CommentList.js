@@ -8,8 +8,9 @@ function CommentList(props) {
     <table className='table'>
       <thead>
         <tr>
-          <th>CustomerId</th>
-          <th>Description</th>
+          <th></th>
+          <th></th>
+          <th></th>
           <th></th>
         </tr>
       </thead>

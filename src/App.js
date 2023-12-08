@@ -3,9 +3,9 @@ import CommentList from './components/CommentList.js';
 import Comment from './components/Comment.js';
 
 const comments = [
-  { id: 1, title: 'Reseña 1', content: 'Esta es una reseña increíble...', rating: 5 },
-  { id: 2, title: 'Reseña 2', content: 'Otra reseña fantástica que elogia...', rating: 4.5 },
-  { id: 3, title: 'Reseña 3', content: 'Esta reseña destaca algunos aspectos...', rating: 4 },
+  { customerDescription: "Belén González", description: 'Como todas las ediciones de Minalima, es una maravilla. Este es mi libro favorito de la saga, a lo que se ha sumado una encuadernación y una serie de ilustraciones increíbles. Un imprescindible para aquellos que crecimos leyendo a Harry Potter.', rating: 5, updatedDate:"06/10/2023" },
+  { customerDescription: "Juan Gutiérrez", description: 'Es una mierda.', rating: 0, updatedDate:"23/10/2023" },
+  { customerDescription: "Sandra Jiménez", description: 'Es preciosa esta edicion!', rating: 4, updatedDate:"21/09/2023" },
 ];
 
 function App() {
