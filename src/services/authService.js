@@ -5,7 +5,7 @@ const authService = {
       // Puedes utilizar bibliotecas como axios para realizar solicitudes a tus microservicios
       console.log('Usuario inició sesión');
       // Simulando redirección después del inicio de sesión
-      window.location.href = '/dashboard';
+      window.location.href = '/';
     },
     // Otros métodos de autenticación, como logout, verificar estado de autenticación, etc.
   };

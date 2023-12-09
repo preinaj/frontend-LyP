@@ -8,6 +8,10 @@ function Home() {
       <h1> Página Principal </h1>
       <Link to="/login">Seccion login</Link>
       <div>---</div>
+      <Link to="/login/register">Seccion registro</Link>
+      <div>---</div>
+      <Link to="/vendorUser">Perfil vendedor</Link>
+      <div>---</div>
       <Link to="/order">Seccion orders</Link>
       <div>---</div>
       <Link to="/book">Seccion books</Link>
