@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './HistoryOrders.css';
 
@@ -10,7 +11,7 @@ function HistoryOrder({ order }) {
       <td>05/01/2023</td>
       <td>10€</td>
       <td><span class="badge badge-warning">En preparacion</span></td>
-      <td><button type="button" class="btn btn-info">Ver detalles</button></td>
+      <td></td><Link to="/historyOrders/1"><button type="button" class="btn btn-info">Ver detalles</button></Link>
     </tr>
   );
 }

@@ -24,13 +24,13 @@ function HistoryOrdersFilter() {
         </div>
       
 
-        {/* <div class="mb-3 d-flex align-items-center">
+        <div class="mb-3 d-flex align-items-center">
           <label class="form-label me-2">Rango de precio: </label>
-          <input type="number" class="form-control me-2" id="minPrice" placeholder="Mínimo" style="width: auto;">
+          <input type="number" class="form-control me-2" id="minPrice" placeholder="Mínimo"></input>
           <span class="me-2">-</span>
-          <input type="number" class="form-control" id="maxPrice" placeholder="Máximo" style="width: auto;">
+          <input type="number" class="form-control" id="maxPrice" placeholder="Máximo"></input>
           €
-        </div> */}
+        </div>
 
 
         <div class="mb-3">
