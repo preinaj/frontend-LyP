@@ -1,57 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Card, Button, Form, Collapse } from 'react-bootstrap';
 
 import './HistoryOrders.css';
 
+
 function HistoryOrdersFilter() {
+
+  const [open, setOpen] = useState(false);
+
+  const inputStyle = { maxWidth: '200px' };
+
   return (
-  <div>
-    <div class="d-flex justify-content-end align-items-end">
-      <button type="button" class="btn btn-outline-info" data-bs-toggle="collapse" data-bs-target="#history-orders-filter" aria-controls="history-orders-filter">Filtrar y ordenar</button>
+    <div>
+      <div className="d-flex justify-content-end align-items-end">
+      <Button 
+          variant="outline-info" 
+          onClick={() => setOpen(!open)} 
+          aria-controls="history-orders-filter"
+          aria-expanded={open}
+        >
+          Filtrar y ordenar
+        </Button>
+      </div>
+
+      <Collapse in={open}>
+      <div id="history-orders-filter">
+        <Card>
+          <Card.Body>
+            <Form>
+              <Form.Group className="mb-3 d-flex align-items-center">
+                <Form.Label className="me-2">Estado del pedido:</Form.Label>
+                <Form.Control as="select" id="orderStatus" style={inputStyle}>
+                  <option value="preparation">En preparación</option>
+                  <option value="shipped">Enviado</option>
+                  <option value="cancelled">Cancelado</option>
+                  <option value="delivered">Entregado</option>
+                </Form.Control>
+              </Form.Group>
+
+              <Form.Group className="mb-3 d-flex align-items-center">
+                <Form.Label className="me-2">Rango de precio: </Form.Label>
+                <Form.Control type="number" style={inputStyle} id="minPrice" placeholder="Mínimo" />
+                <span>-</span>
+                <Form.Control type="number" style={inputStyle} id="maxPrice" placeholder="Máximo" />
+                €
+              </Form.Group>
+
+              <Form.Group className="mb-3 d-flex align-items-center">
+                <Form.Label className="me-2">Ordenar por:</Form.Label>
+                <Form.Control as="select" style={inputStyle} id="sortOrder">
+                  <option value="deliveryDate">Fecha prevista de entrega</option>
+                  <option value="orderDate">Fecha de realización</option>
+                  <option value="totalPayment">Pago total</option>
+                </Form.Control>
+              </Form.Group>
+
+              <div className="d-flex justify-content-center gap-2">
+                <Button variant="info" type="submit">Aplicar filtros</Button>
+                <Button variant="secondary" type="button">Borrar filtros</Button>
+              </div>
+            </Form>
+          </Card.Body>
+        </Card>
+      </div>
+      </Collapse>
     </div>
-
-    <div class="collapse" id="history-orders-filter">
-    <div class="card card-body history-orders-filter">
-      <form>
-        <div class="mb-3">
-          <label for="orderStatus" class="form-label">Estado del pedido:</label>
-          <select class="form-select" id="orderStatus">
-            <option selected>Elige...</option>
-            <option value="preparation">En preparación</option>
-            <option value="shipped">Enviado</option>
-            <option value="cancelled">Cancelado</option>
-            <option value="delivered">Entregado</option>
-          </select>
-        </div>
-      
-
-        <div class="mb-3 d-flex align-items-center">
-          <label class="form-label me-2">Rango de precio: </label>
-          <input type="number" class="form-control me-2" id="minPrice" placeholder="Mínimo"></input>
-          <span class="me-2">-</span>
-          <input type="number" class="form-control" id="maxPrice" placeholder="Máximo"></input>
-          €
-        </div>
-
-
-        <div class="mb-3">
-          <label for="sortOrder" class="form-label">Ordenar por:</label>
-          <select class="form-select" id="sortOrder">
-            <option selected>Elige...</option>
-            <option value="deliveryDate">Fecha prevista de entrega</option>
-            <option value="orderDate">Fecha de realización</option>
-            <option value="totalPayment">Pago total</option>
-          </select>
-        </div>
-
-        <div class="d-flex justify-content-center gap-2">
-            <button type="submit" class="btn btn-info">Aplicar filtros</button>
-            <button type="button" class="btn btn-secondary" onclick="resetForm()">Borrar filtros</button>
-        </div>
-
-      </form>
-    </div>
-    </div>
-  </div>  
   );
 }
 

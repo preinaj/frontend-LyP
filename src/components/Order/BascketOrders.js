@@ -1,57 +1,52 @@
 import React from 'react';
-
+import { Container, Row, Col, Card, ListGroup, Form, Button, InputGroup } from 'react-bootstrap';
 import './BascketOrders.css';
 
 function BascketOrders() {
   return (
-    <div class="col">
-    <h2 class="section-title">Carrito de la compra</h2> 
-    <div class="container basket-orders">
-        <div class="card basket-order mb-5">
-        <div class="card-header text-center basket-order-header">
+    <Col>
+      <h2 className="section-title">Carrito de la compra</h2> 
+      <Container className="basket-orders">
+        <Card className="basket-order mb-5">
+          <Card.Header className="text-center basket-order-header">
             <h5>Pedido a vendedor @ElRinconDelLibro</h5>
-        </div>
-        <div class="card-body row align-items-center">
-            <div class="col-md-7 basket-order-products">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        <p><b>Harry Potter y la Piedra Filosofal</b></p>
-                        <p>Precio: 5 €/ud</p>
-                        <div class="d-flex align-items-center">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                  <label class="input-group-text" for="inputGroupSelect01">Unidades</label>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <form action="/update_quantity" method="post">
-                                        <input type="number" name="quantity" value="2" min="1" class="form-control"></input>
-                                    </form>
-                                    <button class="btn btn-danger btn-sm btn-delete ml-2"><i class="fas fa-trash"></i></button>
-                                </div>
-                              </div>
-                        </div>
-
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-5 basket-order-data">
-                <div class="row justify-content-center">
-                    <ul class="list-group">
-                        <li class="list-group-item"> <b>Numero de artículos:</b> 3</li>
-                        <li class="list-group-item"> <b>Precio total:</b> 17 €</li>
-                    </ul>
+          </Card.Header>
+          <Card.Body className="row align-items-center">
+            <Col md={7} className="basket-order-products">
+              <ListGroup variant="flush">
+                <ListGroup.Item>
+                  <p><b>Harry Potter y la Piedra Filosofal</b></p>
+                  <p>Precio: 5 €/ud</p>
+                  <div className="d-flex align-items-center">
+                    <InputGroup className="mb-3">
+                      <InputGroup.Text>Unidades</InputGroup.Text>
+                      <Form action="/update_quantity" method="post">
+                        <Form.Control type="number" name="quantity" defaultValue="2" min="1"></Form.Control>
+                      </Form>
+                      <Button variant="danger" size="sm" className="ml-2"><i className="fas fa-trash"></i></Button>
+                    </InputGroup>
+                  </div>
+                </ListGroup.Item>
+              </ListGroup>
+            </Col>
+            <Col md={5} className="basket-order-data">
+              <Row className="justify-content-center">
+                <ListGroup>
+                  <ListGroup.Item> <b>Numero de artículos:</b> 3</ListGroup.Item>
+                  <ListGroup.Item> <b>Precio total:</b> 17 €</ListGroup.Item>
+                </ListGroup>
+              </Row>
+              <Row className="justify-content-center">
+                <div className="d-grid gap-3">
+                  <Button type="button" variant="info" className="mt-3"><i className="fas fa-truck"></i> Pedir</Button>
+                  <Button type="button" variant="secondary" className="mt-3"><i className="fas fa-trash"></i> Borrar</Button>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="d-grid gap-3">
-                        <button type="button" class="btn btn-info mt-3"><i class="fas fa-truck"></i> Pedir</button>
-                        <button type="button" class="btn btn-secondary mt-3"><i class="fas fa-trash"></i> Borrar</button>
-                    </div>
-                </div> 
-            </div>
-        </div>
-    </div>
-</div>
-</div>
+              </Row> 
+            </Col>
+          </Card.Body>
+        </Card>
+      </Container>
+    </Col>
   );
 }
 
