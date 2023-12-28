@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Card, Button, Form, Collapse } from 'react-bootstrap';
 
 import './HistoryOrders.css';
@@ -28,31 +28,39 @@ function HistoryOrdersFilter() {
         <Card>
           <Card.Body>
             <Form>
-              <Form.Group className="mb-3 d-flex align-items-center">
-                <Form.Label className="me-2">Estado del pedido:</Form.Label>
-                <Form.Control as="select" id="orderStatus" style={inputStyle}>
-                  <option value="preparation">En preparación</option>
-                  <option value="shipped">Enviado</option>
-                  <option value="cancelled">Cancelado</option>
-                  <option value="delivered">Entregado</option>
-                </Form.Control>
+              <Form.Group className="row mb-3 d-flex align-items-center">
+                <Form.Label className="col-sm-2">Estado del pedido:</Form.Label>
+                <Form.Select className="col" style={inputStyle} id="orderStatus">
+                  <option value="">Elija una opción</option>
+                  <option value="In preparation">In preparation</option>
+                  <option value="Sent">Sent</option>
+                  <option value="Delivered">Delivered</option>
+                  <option value="Cancelled">Cancelled</option>
+                </Form.Select> 
+
               </Form.Group>
 
-              <Form.Group className="mb-3 d-flex align-items-center">
-                <Form.Label className="me-2">Rango de precio: </Form.Label>
-                <Form.Control type="number" style={inputStyle} id="minPrice" placeholder="Mínimo" />
-                <span>-</span>
-                <Form.Control type="number" style={inputStyle} id="maxPrice" placeholder="Máximo" />
-                €
+              <Form.Group className="row mb-3 d-flex align-items-center">
+                <Form.Label className="col-sm-2">Rango de precio (€): </Form.Label>
+                <div className='col'>
+                  <div className='row flex-row gap-3'>
+
+                    <Form.Control type="number" style={inputStyle} id="minPrice" placeholder="Mínimo" />
+                    <Form.Control type="number" style={inputStyle} id="maxPrice" placeholder="Máximo" />
+                    
+                  </div>
+                </div>
+                
               </Form.Group>
 
-              <Form.Group className="mb-3 d-flex align-items-center">
-                <Form.Label className="me-2">Ordenar por:</Form.Label>
-                <Form.Control as="select" style={inputStyle} id="sortOrder">
+              <Form.Group className="row mb-3 d-flex align-items-center">
+                <Form.Label className="col-sm-2">Ordenar por:</Form.Label>
+                <Form.Select className="col" style={inputStyle} id="sortOrder">
+                  <option value="">Elija una opción</option>
+                  <option value="totalPayment">Pago total</option>
                   <option value="deliveryDate">Fecha prevista de entrega</option>
                   <option value="orderDate">Fecha de realización</option>
-                  <option value="totalPayment">Pago total</option>
-                </Form.Control>
+                </Form.Select> 
               </Form.Group>
 
               <div className="d-flex justify-content-center gap-2">

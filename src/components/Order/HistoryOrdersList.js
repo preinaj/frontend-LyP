@@ -1,12 +1,36 @@
-import React from 'react';
-import HistoryOrder from './HistoryOrder';
+import React, { useEffect } from 'react';
 import { Table } from 'react-bootstrap';
-
 import './HistoryOrders.css';
 
-function HistoryOrdersList({ orders }) {
+import HistoryOrdersListOrder from './HistoryOrdersListOrder';
+import OrdersApi from './OrdersApi';
+
+
+
+// function HistoryOrdersList({ orders }) {
+
+//   // Retrieve orders data from API
+//   useEffect(() => {
+    
+//     async function fetchOrders() {
+
+//       try {
+//         const orders = await OrdersApi.getOrders();  
+//         setContacts(orders);
+//       } catch (error) {
+//         // setMessage('Error retrieving orders: ' + error.message);
+//       }
+//     }
+
+//     fetchOrders();
+
+//   }, []);
+
+
+function HistoryOrdersList(props) {
+
   return (
-    <Table hover className="mt-4 text-center">
+    <Table className="mt-4 text-center">
       <thead>
         <tr className="history-orders-tableHeader">
           <th scope="col">Identificador</th>
@@ -17,8 +41,10 @@ function HistoryOrdersList({ orders }) {
           <th scope="col">Acciones</th>
         </tr>
       </thead>
-      <tbody>
-        <HistoryOrder />
+      <tbody className='history-orders-tableBody'>
+        {props.orders.map((order) => 
+          <HistoryOrdersListOrder key={order.orderId} order={order} />          
+        )}
       </tbody>
     </Table>
   );

@@ -4,12 +4,12 @@ body {
   }
   
   .card-header {
-    border-color: #17a2b8;
-    background-color: #17a2b8;
+    border-color: #0dcaf0;
+    background-color: #0dcaf0;
     color: white;
   }
   
   .card-body {
-    border-color: #17a2b8;
+    border-color: #0dcaf0;
     background-color: #edf7f8;
   }

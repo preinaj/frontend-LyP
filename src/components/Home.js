@@ -10,7 +10,7 @@ function Home() {
       <div>---</div>
       <Link to="/historyOrders">Seccion orders history</Link>
       <div>---</div>
-      <Link to="/ordersBascket">Seccion orders basket</Link>
+      <Link to="/ordersBasket">Seccion orders basket</Link>
       <div>---</div>
       <Link to="/book">Seccion books</Link>
       <div>---</div>

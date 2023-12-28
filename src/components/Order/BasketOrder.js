@@ -1,9 +1,9 @@
 
 import React from 'react';
 
-import './BascketOrders.css';
+import './BasketOrders.css';
 
-function BascketOrder() {
+function BasketOrder() {
   return (
     <div className="card basket-order mb-5">
         <div className="card-header text-center basket-order-header">
@@ -51,4 +51,4 @@ function BascketOrder() {
   );
 }
 
-export default BascketOrder;
+export default BasketOrder;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Row, Col, Card, ListGroup, Form, Button, InputGroup } from 'react-bootstrap';
-import './BascketOrders.css';
+import './BasketOrders.css';
 
-function BascketOrders() {
+function BasketOrders() {
   return (
     <Col>
       <h2 className="section-title">Carrito de la compra</h2> 
@@ -50,4 +50,4 @@ function BascketOrders() {
   );
 }
 
-export default BascketOrders;
+export default BasketOrders;
